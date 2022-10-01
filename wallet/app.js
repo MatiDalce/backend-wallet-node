@@ -5,28 +5,24 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors')
 
+var indexRouter = require('./routes/index'); // requerimos el indexrouter
 
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var app = express(); //ejecutamos express y lo almacenamos en la variable app para poder usarlo
 
-var app = express();
-
-// view engine setup
+// configuramos el motor de busquedas
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); // definimos ejs como view engine
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); // definimos la carpeta statica de nuestro proyecto
 
-app.use('/', indexRouter);
+app.use('/', indexRouter); // recibimos las peticiones y las redirigimos en el indexRouter
 
-app.use(cors({origin:'*'}))
-
-
+app.use(cors({origin:'*'})) // Permitimos el acceso público a la API
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
