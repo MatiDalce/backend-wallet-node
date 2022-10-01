@@ -1,6 +1,6 @@
 // Este es un index donde manejamos todos los endpoints
 
-const express = require('express'); 
+const express = require('express');
 const router = express.Router();
 
 
