@@ -1,4 +1,5 @@
 // Creamos la aplicación a partir de express-generator 
+// Configuraciones del servidor y puerto están en la carpeta bin
 var createError = require('http-errors');
 var express = require('express'); 
 var path = require('path');
