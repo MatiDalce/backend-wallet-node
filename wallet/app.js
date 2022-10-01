@@ -1,9 +1,10 @@
+// Creamos la aplicación a partir de express-generator 
 var createError = require('http-errors');
-var express = require('express');
+var express = require('express'); 
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const cors = require('cors')
+const cors = require('cors') // requerimos el paquete CORS para configurar el origen de las peticiones que entran
 
 var indexRouter = require('./routes/index'); // requerimos el indexrouter
 
