@@ -39,7 +39,7 @@ db.Sequelize = Sequelize;
 
 async function createSchema() {
   try {
-    await sequelize.sync({ force: true })
+    await sequelize.sync(/*{ force: true }*/)
     console.log("create schema ok")
   } catch (e) { console.error("create schema", e) }
 }
