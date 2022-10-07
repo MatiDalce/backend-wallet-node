@@ -6,8 +6,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors') // requerimos el paquete CORS para configurar el origen de las peticiones que entran
-
 var indexRouter = require('./routes/index'); // requerimos el indexrouter
+const db = require('./models')
+
 
 
 var app = express(); //ejecutamos express y lo almacenamos en la variable app para poder usarlo

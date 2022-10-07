@@ -36,10 +36,8 @@ module.exports = (sequelize, dataTypes) => { // tomo los objetos sequelize y dat
         }),
         User.hasMany(models.Transactions, { // definimos que un usuario puede recibir muchas transacciones
             as: 'Para'    
-        }),
-        User.hasOne(models.Wallet, { // definimos que a un usuario le pertenece una billetera
-                as: "Wallet"
-            })
+        })
+      
     }
     return User;
 }
