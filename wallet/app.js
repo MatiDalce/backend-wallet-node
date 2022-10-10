@@ -9,8 +9,6 @@ const cors = require('cors') // requerimos el paquete CORS para configurar el or
 var indexRouter = require('./routes/index'); // requerimos el indexrouter
 const db = require('./models')
 
-
-
 var app = express(); //ejecutamos express y lo almacenamos en la variable app para poder usarlo
 
 // configuramos el motor de busquedas
@@ -23,9 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public'))); // definimos la carpeta statica de nuestro proyecto
 
-app.use('/', indexRouter); // recibimos las peticiones y las redirigimos en el indexRouter
-
 app.use(cors({origin:'*'})) // Permitimos el acceso público a la API
+
+app.use('/', indexRouter); // recibimos las peticiones y las redirigimos en el indexRouter
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

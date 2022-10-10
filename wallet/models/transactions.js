@@ -18,19 +18,19 @@ module.exports = (sequelize, DataTypes) => {
 
     let config = { tableName: "Transactions", timestamps: true }; // configuramos el nombre y seteamos timestamps true a nuestro modelo
 
-    const Transaction = sequelize.define("Transactions", cols, config); // definimos nuestro modelo
+    const Transactions = sequelize.define("Transactions", cols, config); // definimos nuestro modelo
     //empezamos a hacer las asociaciones con el modelo usuario
-    Transaction.associate = function (models) {
-        Transaction.belongsTo(models.User, {   // definimos que un usuario envia 
+    Transactions.associate = function (models) {
+        Transactions.belongsTo(models.User, {   // definimos que un usuario envia 
             as: 'De',
             foreignKey: 'UserId'
         }),
-        Transaction.belongsTo(models.User, { // definimos que un usuario recibe
+            Transactions.belongsTo(models.User, { // definimos que un usuario recibe
                 as: 'Para',
                 foreignKey: 'UserId'
             })
     }
-    return Transaction;
 
-
+    return Transactions;
+    
 }

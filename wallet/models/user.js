@@ -22,6 +22,16 @@ module.exports = (sequelize, dataTypes) => { // tomo los objetos sequelize y dat
             type: dataTypes.STRING,
             allowNull: false,
             unique: true
+        },
+        ocupation: {
+            type:dataTypes.STRING,
+            allowNull:false,
+            unique:false
+        },
+        active: {
+            type:dataTypes.BOOLEAN,
+            allowNull:false,
+            unique:false
         }
     };
 
